@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" role="img" aria-label="BIG ONE Electric">
+  <defs>
+    <style>
+      .word { font-family: 'Jost', 'Futura', 'Century Gothic', Arial, sans-serif; fill: #15598C; }
+    </style>
+  </defs>
+  <!-- Wordmark -->
+  <text class="word" x="40" y="105" font-size="92" font-weight="700" letter-spacing="2">BIG O</text>
+  <text class="word" x="430" y="105" font-size="92" font-weight="700" letter-spacing="2">NE</text>
+
+  <!-- Lightning-in-circle replacing the O of ONE -->
+  <circle cx="395" cy="74" r="40" fill="#15598C"/>
+  <path d="M402 40 L372 80 H392 L386 110 L420 66 H398 Z" fill="#EAF2F8" stroke="#EAF2F8" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- ELECTRIC -->
+  <text class="word" x="118" y="170" font-size="40" font-weight="500" letter-spacing="22">ELECTRIC</text>
+
+  <!-- Circuit underline motif -->
+  <g fill="none" stroke="#15598C" stroke-width="3.2">
+    <path d="M70 120 C70 138 90 138 110 138 L360 138 C378 138 380 120 388 108"/>
+    <path d="M402 110 C410 122 420 138 440 138 L520 138 C536 138 536 150 536 158"/>
+  </g>
+  <circle cx="70" cy="116" r="6" fill="#15598C"/>
+  <circle cx="536" cy="160" r="9" fill="none" stroke="#15598C" stroke-width="3.2"/>
+  <circle cx="536" cy="160" r="3" fill="#15598C"/>
+</svg>
