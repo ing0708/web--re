@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BIG ONE ELECTRIC — Rotary Warning Light | Engineered for Absolute Safety</title>
+<meta name="description" content="Re-imagining the future of warning systems. Premium AC 220V LED rotary warning beacons in four spectrum signals — Amber, Blue, Green and Red. Made in Thailand." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --void:#000;--carbon:#070709;--charcoal:#0E0F12;--steel:#16181D;
+    --navy:#15598C;--navy-deep:#0B2E6B;--navy-glow:#3FA9F5;
+    --amber:#FFB732;--blue:#4E78F0;--green:#18C9A6;--red:#FF4D4D;
+    --glow:var(--amber);
+    --display:'Orbitron','Space Grotesk',sans-serif;
+    --sans:'Space Grotesk',system-ui,sans-serif;
+    --thai:'Prompt','Space Grotesk',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:#000;color:#fff;font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 50% -10%, rgba(21,89,140,.18), transparent 45%),
+      linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+    background-size:100% 100%,60px 60px,60px 60px;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase}
+  .display{font-family:var(--display)}
+  .thai{font-family:var(--thai)}
+  .neon{text-shadow:0 0 6px var(--glow),0 0 22px color-mix(in srgb,var(--glow) 55%,transparent)}
+  .accent{color:var(--glow)}
+
+  /* NAV */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(6px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1280px;margin:0 auto}
+  .logo{height:38px;filter:drop-shadow(0 0 5px rgba(63,169,245,.55)) drop-shadow(0 0 14px rgba(21,89,140,.45))}
+  nav.links{display:flex;gap:32px}
+  nav.links a{font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.3em;text-transform:uppercase}
+  nav.links a:hover{color:#fff}
+  .line-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(24,201,166,.4);background:rgba(24,201,166,.1);color:var(--green);padding:9px 18px;border-radius:999px;font-size:13px;font-weight:600;transition:.2s}
+  .line-btn:hover{background:rgba(24,201,166,.2);box-shadow:0 0 22px rgba(24,201,166,.45)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  .navline{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent)}
+  @media(max-width:760px){nav.links{display:none}}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;padding-top:96px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;width:100%}
+  .eyebrow{font-size:11px;color:var(--navy-glow);letter-spacing:.3em;text-transform:uppercase;margin-bottom:20px}
+  h1{font-family:var(--display);font-weight:800;font-size:60px;line-height:1.05;letter-spacing:-.01em}
+  .lede{margin-top:20px;max-width:540px;font-size:18px;color:rgba(255,255,255,.65)}
+  .lede b{color:#fff;font-weight:400}
+  .lede-th{margin-top:8px;font-size:14px;color:rgba(255,255,255,.4)}
+  .cta-row{margin-top:36px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#000;font-weight:700;padding:14px 28px;border-radius:999px;font-size:14px;transition:.2s}
+  .btn-primary:hover{transform:scale(1.03);box-shadow:0 0 30px rgba(24,201,166,.6)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:14px 28px;border-radius:999px;font-size:14px;font-weight:600;transition:.2s}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.4);color:#fff}
+  .stats{margin-top:48px;display:grid;grid-template-columns:repeat(3,auto);gap:24px;max-width:440px;border-top:1px solid rgba(255,255,255,.1);padding-top:24px}
+  .stats dt{font-family:var(--display);font-weight:700;font-size:20px}
+  .stats dd{margin-top:4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4)}
+
+  /* BEACON (light-pod) */
+  .beacon{position:relative;width:100%;max-width:460px;margin:0 auto;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+  .sweep{position:absolute;inset:0;border-radius:50%;filter:blur(28px);opacity:.8;animation:sweep 4s linear infinite;
+    background:conic-gradient(from 0deg,transparent 0deg,var(--glow) 40deg,transparent 130deg,transparent 220deg,var(--glow) 250deg,transparent 340deg);
+    -webkit-mask-image:radial-gradient(circle at center,transparent 30%,#000 60%,transparent 88%);
+    mask-image:radial-gradient(circle at center,transparent 30%,#000 60%,transparent 88%)}
+  .bloom{position:absolute;left:50%;top:50%;width:88%;height:88%;transform:translate(-50%,-50%);border-radius:50%;filter:blur(60px);background:var(--glow);opacity:.45;transition:background .5s}
+  .pod{position:absolute;left:50%;top:50%;width:86%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;transition:box-shadow .5s;
+    background:radial-gradient(circle at 50% 46%,rgba(255,255,255,.97) 0%,rgba(248,250,252,.95) 42%,rgba(255,255,255,.55) 60%,rgba(255,255,255,0) 72%);
+    box-shadow:0 0 70px color-mix(in srgb,var(--glow) 40%,transparent),0 0 24px color-mix(in srgb,var(--glow) 33%,transparent)}
+  .pod-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:10;transition:opacity .5s;
+    -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 50%,rgba(0,0,0,.55) 66%,transparent 74%);
+    mask-image:radial-gradient(circle at 50% 50%,#000 50%,rgba(0,0,0,.55) 66%,transparent 74%)}
+  .pod-fallback{position:absolute;z-index:11;font-family:var(--display);font-size:12px;letter-spacing:.2em;color:#5b6675;text-transform:uppercase;text-align:center;width:60%}
+  @keyframes sweep{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.sweep{animation:none}}
+
+  section{padding:120px 0}
+  .label{font-size:11px;color:var(--navy-glow);letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px}
+  h2{font-family:var(--display);font-weight:800;font-size:46px;line-height:1.1}
+  .muted{color:rgba(255,255,255,.4)}
+  .sub{margin-top:24px;max-width:680px;font-size:18px;color:rgba(255,255,255,.6)}
+
+  /* INNOVATION */
+  .traits{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.04)}
+  .trait{background:var(--carbon);padding:28px;min-height:300px;display:flex;flex-direction:column;transition:box-shadow .3s}
+  .trait .top{display:flex;justify-content:space-between;align-items:center}
+  .trait .id{font-family:var(--display);font-size:13px;color:rgba(255,255,255,.3)}
+  .trait .pip{width:10px;height:10px;border-radius:50%;opacity:.4;transition:.3s}
+  .trait h3{font-family:var(--display);font-weight:700;font-size:28px;margin-top:40px;color:rgba(255,255,255,.85);transition:.3s}
+  .trait .th{font-family:var(--thai);font-size:12px;color:rgba(255,255,255,.35);margin-top:4px}
+  .trait p{margin-top:20px;font-size:14px;color:rgba(255,255,255,.55)}
+  .trait .meta{margin-top:auto;padding-top:24px;font-size:9px;letter-spacing:.3em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.3s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .trait:hover{box-shadow:inset 0 0 60px color-mix(in srgb,var(--c) 18%,transparent)}
+  .trait:hover h3{color:#fff;text-shadow:0 0 6px var(--c),0 0 22px color-mix(in srgb,var(--c) 55%,transparent)}
+  .trait:hover .pip{opacity:1;box-shadow:0 0 14px var(--c)}
+  .trait:hover .meta{opacity:1;transform:none;color:var(--c)}
+
+  /* SPECTRUM */
+  #spectrum{border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);background:rgba(14,15,18,.6)}
+  .spec-grid{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .readout{max-width:460px;margin:16px auto 0;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.4);border-radius:12px;padding:12px 16px}
+  .readout .k{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+  .readout .v{font-family:var(--display);font-weight:700;font-size:18px}
+  .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .chip{display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3);border-radius:12px;padding:16px 8px;cursor:pointer;transition:.2s}
+  .chip .swatch{width:28px;height:28px;border-radius:50%;transition:transform .2s}
+  .chip:hover .swatch{transform:scale(1.1)}
+  .chip .nm{font-size:12px;font-weight:600;color:rgba(255,255,255,.5)}
+  .chip .cat{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+  .chip.active .nm{color:#fff}
+  .deployed{margin-top:24px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3);border-radius:12px;padding:20px}
+  .deployed .k{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+  .deployed .v{margin-top:4px;font-size:16px;color:rgba(255,255,255,.85)}
+  .core{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04)}
+  .core div{background:var(--carbon);padding:12px 16px}
+  .core dt{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .core dd{margin-top:4px;font-size:12px;font-weight:600;color:rgba(255,255,255,.8)}
+  .req{margin-top:24px;display:inline-flex;gap:8px;font-size:14px;font-weight:600}
+
+  /* TABLE */
+  .sizes{margin-top:96px}
+  .sizes h3{font-family:var(--display);font-weight:700;font-size:30px}
+  .sizes .sub{font-size:14px;margin-top:12px}
+  .tbl-wrap{margin-top:32px;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;min-width:640px;text-align:left}
+  thead tr{background:rgba(255,255,255,.04)}
+  th{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:500;padding:16px 20px}
+  td{padding:16px 20px;font-size:14px;color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.06)}
+  tbody tr:hover{background:rgba(255,255,255,.03)}
+  td.model{font-family:var(--display);font-weight:700;color:#fff}
+  td.out{font-weight:600;color:var(--glow)}
+
+  /* CTA */
+  .cta-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:80px 32px;text-align:center;
+    background:linear-gradient(135deg,var(--steel),var(--carbon));
+    box-shadow:0 0 0 1px rgba(63,169,245,.4),0 0 24px rgba(63,169,245,.3),inset 0 0 18px rgba(63,169,245,.1)}
+  .cta-card h2{margin:0 auto;max-width:760px}
+  .cta-card p{margin:20px auto 0;max-width:520px;color:rgba(255,255,255,.6)}
+
+  /* FOOTER */
+  footer{border-top:1px solid rgba(255,255,255,.1);background:var(--carbon);padding:56px 0}
+  .foot{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+  .foot p{font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;max-width:360px}
+  .foot .cols{display:flex;gap:56px}
+  .foot h4{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+  .foot li{list-style:none;display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.6);margin-bottom:10px}
+  .foot .pip{width:8px;height:8px;border-radius:50%}
+  .copy{margin-top:48px;border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(255,255,255,.3)}
+
+  @media(max-width:860px){
+    .hero-grid,.spec-grid{grid-template-columns:1fr}
+    h1{font-size:42px}h2{font-size:32px}
+    .traits,.chips,.core{grid-template-columns:repeat(2,1fr)}
+    .hero{padding-top:120px}
+  }
+</style>
+</head>
+<body>
+<!-- inline brand logo (luminous variant) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="bigone" viewBox="0 0 600 200">
+    <style>.word{font-family:'Orbitron','Jost',Arial,sans-serif;fill:#EAF2F8}</style>
+    <text class="word" x="40" y="105" font-size="86" font-weight="800" letter-spacing="2">BIG O</text>
+    <text class="word" x="430" y="105" font-size="86" font-weight="800" letter-spacing="2">NE</text>
+    <circle cx="395" cy="74" r="40" fill="#2B7DB8"/>
+    <path d="M402 40 L372 80 H392 L386 110 L420 66 H398 Z" fill="#EAF2F8"/>
+    <text class="word" x="118" y="170" font-size="38" font-weight="500" letter-spacing="22">ELECTRIC</text>
+    <g fill="none" stroke="#3FA9F5" stroke-width="3.2">
+      <path d="M70 120 C70 138 90 138 110 138 L360 138 C378 138 380 120 388 108"/>
+      <path d="M402 110 C410 122 420 138 440 138 L520 138 C536 138 536 150 536 158"/>
+    </g>
+    <circle cx="70" cy="116" r="6" fill="#3FA9F5"/>
+    <circle cx="536" cy="160" r="9" fill="none" stroke="#3FA9F5" stroke-width="3.2"/>
+    <circle cx="536" cy="160" r="3" fill="#3FA9F5"/>
+  </symbol>
+</defs></svg>
+
+<header>
+  <div class="nav">
+    <a href="#top" aria-label="BIG ONE ELECTRIC home"><svg class="logo" viewBox="0 0 600 200" style="width:160px"><use href="#bigone"/></svg></a>
+    <nav class="links">
+      <a href="#innovation">Innovation</a>
+      <a href="#spectrum">Spectrum</a>
+      <a href="#specs">Specs</a>
+    </nav>
+    <a class="line-btn" href="#" data-line><span class="dot"></span>Add LINE</a>
+  </div>
+  <div class="navline"></div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">◈ Rotary Warning Light System</p>
+        <h1>Engineered for <span class="accent neon">Absolute Safety</span>.</h1>
+        <p class="lede">Re-imagining the future of warning systems. The <b>BIG ONE ELECTRIC</b> rotary beacon turns industrial safety into high-tech precision — relentless, adaptive, and impossible to ignore.</p>
+        <p class="lede-th thai">ไฟหมุนเตือนภัย LED — ออกแบบเพื่อความปลอดภัยสูงสุด</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="#" data-line>Contact via LINE <span>→</span></a>
+          <a class="btn-ghost" href="#spectrum">Explore the Spectrum</a>
+        </div>
+        <dl class="stats">
+          <div><dt>4</dt><dd>Spectrum signals</dd></div>
+          <div><dt>AC 220V</dt><dd>LED running</dd></div>
+          <div><dt>30+ yrs</dt><dd>Made in Thailand</dd></div>
+        </dl>
+      </div>
+      <div>
+        <div class="beacon" id="hero-beacon">
+          <div class="sweep"></div>
+          <div class="bloom"></div>
+          <div class="pod"></div>
+          <span class="pod-fallback">add photo →<br>public/light-amber-left.png.jpg</span>
+          <img class="pod-img" id="hero-img" alt="BIG ONE ELECTRIC rotary warning light"
+               src="light-amber-left.png.jpg" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INNOVATION -->
+  <section id="innovation">
+    <div class="wrap">
+      <p class="label">◈ The Innovation</p>
+      <h2>Smart. Flexible. <span class="muted">Indestructible.</span></h2>
+      <p class="sub">Like the brightest minds, our rotary lights adapt to any harsh environment — delivering uncompromised performance when it matters most. Nerdy by design, functional by obsession.</p>
+      <div class="traits" id="traits"></div>
+    </div>
+  </section>
+
+  <!-- SPECTRUM -->
+  <section id="spectrum">
+    <div class="wrap">
+      <p class="label">◈ The Spectrum</p>
+      <h2>4 Dimensions. 4 Spectrum Signals.</h2>
+      <p class="sub">Precision engineering packed into every single rotation. Select a signal to see the beacon transform.</p>
+
+      <div class="spec-grid">
+        <div>
+          <div class="beacon" id="spec-beacon">
+            <div class="sweep"></div>
+            <div class="bloom"></div>
+            <div class="pod"></div>
+            <span class="pod-fallback" id="spec-fallback">add photo</span>
+            <img class="pod-img" id="spec-img" alt="" onerror="this.style.display='none'"/>
+          </div>
+          <div class="readout">
+            <div><div class="k">Signal</div><div class="v" id="ro-name"></div></div>
+            <div style="text-align:right"><div class="k">λ Wavelength</div><div class="v" id="ro-wave" style="color:#fff"></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="chips" id="chips"></div>
+          <div class="deployed"><div class="k">Deployed for</div><div class="v" id="dep"></div></div>
+          <dl class="core" id="core"></dl>
+          <a class="req" href="#" data-line id="req"></a>
+        </div>
+      </div>
+
+      <div class="sizes" id="specs">
+        <h3>Four Sizes, One Standard</h3>
+        <p class="sub">Every model shares the same electrical envelope — choose by footprint and output intensity.</p>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Model</th><th>Diameter</th><th>Height</th><th>LED Array</th><th>Output</th></tr></thead>
+            <tbody id="sizes-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="wrap">
+      <div class="cta-card" style="--glow:var(--navy-glow)">
+        <p class="label" style="text-align:center">◈ Specify with confidence</p>
+        <h2>Uncompromised performance, when it matters most.</h2>
+        <p>Talk to BIG ONE ELECTRIC directly. Get specs, pricing and lead times for any colour and size — fast.</p>
+        <p class="thai" style="margin-top:8px;color:rgba(255,255,255,.35)">ปรึกษาทีมงานโดยตรงผ่าน LINE</p>
+        <a class="btn-primary" href="#" data-line style="margin-top:36px"><span class="dot" style="background:rgba(0,0,0,.7);box-shadow:none"></span>Add LINE — Contact us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <svg class="logo" viewBox="0 0 600 200" style="width:180px;height:auto"><use href="#bigone"/></svg>
+        <p>Re-imagining industrial safety as high-tech precision. Rotary warning lights, signal beacons and factory signal equipment.</p>
+        <p class="thai" style="margin-top:12px;color:rgba(255,255,255,.35)">ไฟหมุนเตือนภัย · สัญญาณไฟโรงงาน · Made in Thailand</p>
+      </div>
+      <div class="cols">
+        <div><h4>Spectrum</h4><ul id="foot-spectrum"></ul></div>
+        <div>
+          <h4>Contact</h4>
+          <a class="req" href="#" data-line style="color:var(--green)"><span class="pip" style="background:var(--green);box-shadow:0 0 8px var(--green)"></span>Add LINE</a>
+          <p style="margin-top:12px;color:rgba(255,255,255,.45)">AC 220V · LED Running</p>
+        </div>
+      </div>
+    </div>
+    <div class="copy"><span id="year"></span> BIG ONE ELECTRIC. All rights reserved.<span class="mono" style="font-size:10px">Engineered for Absolute Safety</span></div>
+  </div>
+</footer>
+
+<script>
+  // ====== EDIT YOUR LINE OFFICIAL ACCOUNT URL HERE ======
+  var LINE_URL = "https://line.me/R/ti/p/@bigoneelectric";
+  document.querySelectorAll('[data-line]').forEach(function(a){a.href=LINE_URL;a.target="_blank";a.rel="noopener"});
+  document.getElementById('year').textContent = "© " + new Date().getFullYear();
+
+  var colorways = [
+    {key:'amber',name:'Amber',th:'เหลืองอำพัน',cat:'No.2',glow:'#FFB732',wave:'590 nm',use:'Roadworks · Forklift · Loading bays',img:'light-amber-left.png.jpg'},
+    {key:'blue', name:'Blue', th:'น้ำเงิน',     cat:'No.1',glow:'#4E78F0',wave:'470 nm',use:'Security · Access control · Patrol',img:'light-blue-left.png.jpg'},
+    {key:'green',name:'Green',th:'เขียว',       cat:'No.1',glow:'#18C9A6',wave:'525 nm',use:'Clear-to-proceed · Process OK',img:'light-green-left.png.jpg'},
+    {key:'red',  name:'Red',  th:'แดง',         cat:'No.1',glow:'#FF4D4D',wave:'630 nm',use:'Emergency stop · Fire · Critical fault',img:'light-red-left.png.jpg'}
+  ];
+  var sizes = [
+    {model:'LTE-1101J',d:'Ø 95 mm', h:'130 mm',led:'18 LED',out:'Tier I · 1,200 cd'},
+    {model:'LTE-5071', d:'Ø 110 mm',h:'155 mm',led:'24 LED',out:'Tier II · 1,800 cd'},
+    {model:'LTE-5072', d:'Ø 125 mm',h:'180 mm',led:'30 LED',out:'Tier III · 2,600 cd'},
+    {model:'LTE-1121', d:'Ø 140 mm',h:'210 mm',led:'36 LED',out:'Tier IV · 3,400 cd'}
+  ];
+  var core = [['Voltage','AC 220 V'],['Bulb','LED Running'],['Mode','Rotary sweep'],['Frequency','120 flash / min'],['Housing','ABS + chrome ring'],['Ingress','IP44 weather-resist'],['Mount','Twin-stud base'],['Lifespan','50,000 hrs']];
+  var traits = [
+    {id:'01',t:'Smart',th:'ชาญฉลาด',c:'#4E78F0',body:'A constant 120-flash rotary sweep tuned for maximum human peripheral detection. It thinks in photons so your crew reacts in milliseconds.',meta:'MODE: ROTARY · 120 FPM · PERIPHERAL-OPTIMISED'},
+    {id:'02',t:'Nerd',th:'ลึกซึ้ง',c:'#18C9A6',body:'Obsessively engineered LED arrays — 18 to 36 emitters per dome, each binned for spectral purity. The deep analytical core behind a simple beacon.',meta:'ARRAY: 18–36 LED · SPECTRAL-BINNED'},
+    {id:'03',t:'Flexible',th:'ยืดหยุ่น',c:'#FFB732',body:'Four spectrum signals, four sizes, one mounting language. It adapts to any harsh environment — like the brightest minds, it reshapes to fit the problem.',meta:'RANGE: 4 COLOURS × 4 SIZES · TWIN-STUD'},
+    {id:'04',t:'Practical',th:'ใช้งานจริง',c:'#FF4D4D',body:'IP44 housing, 50,000-hour lifespan, plug-and-play AC 220V. Brilliance means nothing if it fails on site — so it simply doesn’t.',meta:'BUILD: IP44 · 50,000 HRS · AC 220V'}
+  ];
+
+  // innovation cards
+  document.getElementById('traits').innerHTML = traits.map(function(t){
+    return '<div class="trait" style="--c:'+t.c+'"><div class="top"><span class="id">'+t.id+'</span><span class="pip" style="background:'+t.c+'"></span></div>'
+      +'<h3>'+t.t+'</h3><div class="th">'+t.th+'</div><p>'+t.body+'</p><div class="meta">'+t.meta+'</div></div>';
+  }).join('');
+
+  // chips + sizes + footer
+  document.getElementById('chips').innerHTML = colorways.map(function(c,i){
+    return '<div class="chip" data-i="'+i+'"><span class="swatch" style="background:'+c.glow+';box-shadow:0 0 14px '+c.glow+'"></span><span class="nm">'+c.name+'</span><span class="cat">'+c.cat+'</span></div>';
+  }).join('');
+  document.getElementById('core').innerHTML = core.map(function(p){return '<div><dt>'+p[0]+'</dt><dd>'+p[1]+'</dd></div>'}).join('');
+  document.getElementById('sizes-body').innerHTML = sizes.map(function(s){
+    return '<tr><td class="model">'+s.model+'</td><td>'+s.d+'</td><td>'+s.h+'</td><td>'+s.led+'</td><td class="out">'+s.out+'</td></tr>';
+  }).join('');
+  document.getElementById('foot-spectrum').innerHTML = colorways.map(function(c){
+    return '<li><span class="pip" style="background:'+c.glow+';box-shadow:0 0 8px '+c.glow+'"></span>'+c.name+' · '+c.cat+'</li>';
+  }).join('');
+
+  function setBeacon(el,c){
+    el.style.setProperty('--glow',c.glow);
+    var img = el.querySelector('.pod-img');
+    img.style.display='';
+    img.src=c.img; img.alt='BIG ONE ELECTRIC '+c.name+' LED rotary warning light';
+  }
+  function selectColor(i){
+    var c = colorways[i];
+    var spec = document.getElementById('spec-beacon');
+    setBeacon(spec,c);
+    document.getElementById('spec-fallback').textContent = 'add photo → public/'+c.img;
+    document.getElementById('ro-name').textContent = c.name; document.getElementById('ro-name').style.color=c.glow;
+    document.getElementById('ro-wave').textContent = c.wave;
+    document.getElementById('dep').textContent = c.use;
+    var req = document.getElementById('req'); req.textContent='Request '+c.name+' pricing via LINE →'; req.style.color=c.glow;
+    document.querySelectorAll('#chips .chip').forEach(function(ch,j){
+      var on = j===i; ch.classList.toggle('active',on);
+      ch.style.borderColor = on ? c.glow : 'rgba(255,255,255,.1)';
+      ch.style.boxShadow = on ? '0 0 26px '+c.glow+'55, inset 0 0 18px '+c.glow+'22' : 'none';
+    });
+  }
+  document.querySelectorAll('#chips .chip').forEach(function(ch){ ch.addEventListener('click',function(){selectColor(+ch.dataset.i)}); });
+
+  // init
+  setBeacon(document.getElementById('hero-beacon'),colorways[0]);
+  selectColor(0);
+</script>
+</body>
+</html>
