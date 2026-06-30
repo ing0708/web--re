@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background-color: #000;
+  /* faint engineering grid + radial vignette baked into the page */
+  background-image:
+    radial-gradient(circle at 50% -10%, rgba(21, 89, 140, 0.18), transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+
+@layer components {
+  /* Neon text glow keyed off a CSS var --glow */
+  .neon {
+    text-shadow:
+      0 0 6px var(--glow, #3fa9f5),
+      0 0 22px color-mix(in srgb, var(--glow, #3fa9f5) 55%, transparent);
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--glow, #3fa9f5) 60%, transparent),
+      0 0 24px color-mix(in srgb, var(--glow, #3fa9f5) 45%, transparent),
+      inset 0 0 18px color-mix(in srgb, var(--glow, #3fa9f5) 18%, transparent);
+  }
+
+  .hairline {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mono-label {
+    font-family: var(--font-grotesk), monospace;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+}
+
+/* Logo high-tech navy glow per brand spec */
+.logo-glow {
+  filter: drop-shadow(0 0 5px rgba(63, 169, 245, 0.55))
+    drop-shadow(0 0 14px rgba(21, 89, 140, 0.45));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050506;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d2330;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b7db8;
+}
